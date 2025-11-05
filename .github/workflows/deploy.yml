@@ -28,6 +28,8 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: cvrle1997/next-app:latest
+          build-args: |
+            NEXT_PUBLIC_API_URL=https://api.cadev.fun/posts
 
       - name: Set up kubectl
         run: |

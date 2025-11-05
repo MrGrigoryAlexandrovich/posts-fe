@@ -14,7 +14,11 @@ RUN pnpm install
 # Copy the rest of the app
 COPY . .
 
-# Build Next.js
+# ✅ Add build-time environment variable
+ARG NEXT_PUBLIC_API_URL
+ENV NEXT_PUBLIC_API_URL=$NEXT_PUBLIC_API_URL
+
+# Build Next.js with the API URL baked in
 RUN pnpm run build
 
 # 2️⃣ Production stage
