@@ -1,7 +1,7 @@
 "use server";
 import { revalidatePath } from "next/cache";
 
-const BASE_URL = `${process.env.NEXT_PUBLIC_API_URL}/posts`;
+const BASE_URL = `${process.env.NEXT_PUBLIC_API_URL}`;
 
 export async function getPosts() {
   const res = await fetch(BASE_URL, { cache: "no-store" });
