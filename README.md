@@ -30,7 +30,7 @@ pnpm install
 
 ## 🔧 Environment Variables
 
-Create a `.env.local` file in the project root and add your API base URL:
+Create a `.env` file in the project root and add your API base URL:
 
 ```bash
 NEXT_PUBLIC_API_URL= your url
@@ -67,22 +67,6 @@ This frontend communicates with the backend from
 - Delete post (Delete)
 - Server Actions for form handling
 - Clean and minimal UI with Tailwind CSS
-
----
-
-## 📁 Folder Structure
-
-```
-.
-├── app/
-│   ├── page.tsx           # Posts list
-│   ├── create/            # Form for creating new post
-│   ├── edit/[id]/         # Form for editing existing post
-│   └── components/        # Reusable components (forms, cards, etc.)
-├── styles/                # Tailwind configuration
-├── types/                 # TypeScript types
-└── .env.local             # Environment variables
-```
 
 ---
 
