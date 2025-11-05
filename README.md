@@ -81,7 +81,7 @@ which provides REST API routes for managing posts.
 ## 🧑‍💻 Author
 
 **Ahmed Cvrčak**  
-[🌐 cadev.eu](https://cad-ev.eu)  
+[🌐 CA DEV](https://ca-dev.eu)  
 [💼 LinkedIn](https://linkedin.com/in/ca-dev)  
 [🐙 GitHub](https://github.com/MrGrigoryAlexandrovich)
 
