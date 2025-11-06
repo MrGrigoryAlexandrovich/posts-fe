@@ -29,11 +29,16 @@ jobs:
           push: true
           tags: cvrle1997/next-app:latest
 
-      - name: Set up kubectl
-        run: |
-          mkdir -p $HOME/.kube
-          echo "${{ secrets.KUBECONFIG_DATA }}" | base64 -d > $HOME/.kube/config
+      - name: Set up SSH
+        uses: webfactory/ssh-agent@v0.8.0
+        with:
+          ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
 
-      - name: Rollout restart deployment
+      - name: Rollout restart on Hetzner k3s
         run: |
-          kubectl rollout restart deployment next-frontend
+          ssh -o StrictHostKeyChecking=no ${{ secrets.SSH_USER }}@${{ secrets.SSH_HOST }} << 'EOF'
+          echo "➡️ Updating frontend deployment in k3s..."
+          kubectl rollout restart deployment next-frontend -n default
+          kubectl rollout status deployment next-frontend -n default
+          echo "✅ Frontend redeployed successfully!"
+          EOF
