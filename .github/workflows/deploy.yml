@@ -27,7 +27,7 @@ jobs:
           context: .
           file: ./Dockerfile
           push: true
-          tags: cvrle1997/next-app:latest
+          tags: cvrle1997/next-frontend:latest
 
       - name: Set up SSH
         uses: webfactory/ssh-agent@v0.8.0
